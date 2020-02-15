@@ -1,0 +1,15 @@
+bin
+build
+cmake-build-debug
+CMakeFiles
+coverage
+googletest
+googletest-build
+googletest-master
+lcov
+lib
+libs
+tdd_test_coverage
+white_box_test_coverage
+xsleza20.zip
+
