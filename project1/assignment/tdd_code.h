@@ -106,7 +106,7 @@ protected:
     // implementaci.
     //============================================================================//
     /* prvok v zozname */
-    struct Element_t *root;
+    Element_t *root;
 };
 
 #endif // TDD_CODE_H_

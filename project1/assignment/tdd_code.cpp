@@ -39,8 +39,8 @@ PriorityQueue::PriorityQueue()
 
 PriorityQueue::~PriorityQueue()
 {
-    struct Element_t *firstElement = GetHead();
-    struct Element_t *tmp;
+    Element_t *firstElement = GetHead();
+    Element_t *tmp;
 
     while (firstElement != nullptr) {
         tmp = firstElement;
@@ -51,18 +51,18 @@ PriorityQueue::~PriorityQueue()
 
 void PriorityQueue::Insert(int value)
 {
-    struct Element_t *element = GetHead();
+    Element_t *element = GetHead();
 
     /* nastavenie korena na zaciatok */
     if (element == nullptr) {
-        root = (struct Element_t *)malloc(sizeof(struct Element_t *));
+        root = new Element_t();
         root->pNext = nullptr;
         root->pPrev = nullptr;
         root->value = value;
     }
     else {
-        auto *newElement = (struct Element_t *)malloc(sizeof(struct Element_t *));
-        struct Element_t *currentElement;
+        auto *newElement = new Element_t();
+        Element_t *currentElement;
 
         while (element != nullptr) {
             currentElement = element;
@@ -101,8 +101,8 @@ void PriorityQueue::Insert(int value)
 
 bool PriorityQueue::Remove(int value)
 {
-    struct Element_t *firstElement = GetHead();
-    struct Element_t *currentElement;
+    Element_t *firstElement = GetHead();
+    Element_t *currentElement;
 
     while (firstElement != nullptr) {
         currentElement = firstElement;
@@ -135,7 +135,7 @@ bool PriorityQueue::Remove(int value)
 
 PriorityQueue::Element_t *PriorityQueue::Find(int value)
 {
-    struct Element_t *currentElement = GetHead();
+    Element_t *currentElement = GetHead();
 
     while (currentElement != nullptr) {
         if (currentElement->value == value) {
